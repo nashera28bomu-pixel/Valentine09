@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cymor Pitch — Deep Football Analysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<!-- ===== KICKOFF LOADER ===== -->
+<div id="kickoff-loader">
+  <div class="pitch-lines"></div>
+  <div class="loader-stage">
+    <div class="ball" id="ball"></div>
+    <div class="ball-shadow" id="ball-shadow"></div>
+  </div>
+  <div class="loader-label">
+    <span class="loader-brand">CYMOR PITCH</span>
+    <span class="loader-sub">reading the game<span class="dots"><span>.</span><span>.</span><span>.</span></span></span>
+  </div>
+</div>
+
+<!-- ===== APP SHELL ===== -->
+<div id="app" class="hidden">
+
+  <header class="site-header">
+    <div class="brand">CYMOR<span class="brand-accent">PITCH</span></div>
+    <nav class="main-nav">
+      <a href="#" class="nav-link active" data-view="home">Home</a>
+      <a href="#" class="nav-link" data-view="dashboard">Fixtures</a>
+      <a href="#" class="nav-link" data-view="tracker">Track Record</a>
+    </nav>
+  </header>
+
+  <!-- HOME / LANDING VIEW -->
+  <section id="view-home" class="view">
+    <div class="hero">
+      <div class="hero-eyebrow">PRE-SEASON &nbsp;→&nbsp; FULL SEASON COVERAGE</div>
+      <h1 class="hero-title">Every match,<br>broken down before kickoff.</h1>
+      <p class="hero-sub">Expected goals, corners, cards, and the win-draw-loss call — built from head-to-head history, current form, and home/away splits. No hot takes, just the numbers.</p>
+      <button class="cta-primary" id="cta-start">See today's predictions</button>
+    </div>
+
+    <div class="stat-strip">
+      <div class="stat-chip"><span class="stat-num">10</span><span class="stat-label">matches of H2H per fixture</span></div>
+      <div class="stat-chip"><span class="stat-num">6</span><span class="stat-label">metrics predicted per match</span></div>
+      <div class="stat-chip"><span class="stat-num">%</span><span class="stat-label">confidence rating, every time</span></div>
+    </div>
+
+    <div class="how-it-works">
+      <h2 class="section-title">How a prediction gets made</h2>
+      <div class="steps">
+        <div class="step">
+          <span class="step-mark">FORM</span>
+          <p>Last 5–10 matches per team, weighted heaviest — recent performance moves the needle most.</p>
+        </div>
+        <div class="step">
+          <span class="step-mark">H2H</span>
+          <p>Last 10 head-to-head meetings between the two sides, including scorelines and patterns.</p>
+        </div>
+        <div class="step">
+          <span class="step-mark">SPLIT</span>
+          <p>Home and away specific form — a team's road record rarely matches its home record.</p>
+        </div>
+        <div class="step">
+          <span class="step-mark">OUTPUT</span>
+          <p>Win/draw/loss odds, xG, corners, cards, BTTS, correct score grid, and a confidence rating.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DASHBOARD VIEW -->
+  <section id="view-dashboard" class="view hidden">
+    <div class="dashboard-header">
+      <h2 class="section-title">Fixtures</h2>
+      <div class="league-tabs" id="league-tabs">
+        <button class="tab active" data-comp="PL">Premier League</button>
+        <button class="tab" data-comp="PD">La Liga</button>
+        <button class="tab" data-comp="SA">Serie A</button>
+        <button class="tab" data-comp="BL1">Bundesliga</button>
+        <button class="tab" data-comp="FRIENDLY">Friendlies</button>
+      </div>
+    </div>
+    <div id="fixtures-list" class="fixtures-list">
+      <p class="empty-state">Loading fixtures…</p>
+    </div>
+  </section>
+
+  <!-- MATCH ANALYSIS VIEW -->
+  <section id="view-match" class="view hidden">
+    <button class="back-link" id="back-to-fixtures">&larr; Back to fixtures</button>
+    <div id="match-analysis-content"></div>
+  </section>
+
+  <!-- TRACK RECORD VIEW -->
+  <section id="view-tracker" class="view hidden">
+    <h2 class="section-title">Track Record</h2>
+    <p class="empty-state">Prediction accuracy history will populate here once matches settle. This is where trust gets built — no cherry-picking, every call logged.</p>
+  </section>
+
+  <footer class="site-footer">
+    <p>Cymor Pitch — built by Cymor Tech Services. Predictions are analytical estimates, not betting advice.</p>
+  </footer>
+
+</div>
+
+<script src="/js/loader.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>
