@@ -1,0 +1,22 @@
+{
+  "name": "cymor-pitch",
+  "version": "1.0.0",
+  "description": "Deep football match analysis and prediction platform - Cymor Pitch",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.5.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "node-cache": "^5.1.2",
+    "node-cron": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
